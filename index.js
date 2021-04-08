@@ -62,17 +62,7 @@ app.get("/createTableTiming", (req, res) => {
   });
 });
 
-app.get("/createTableSalary", (req, res) => {
-  let query =
-    "Create table Salary(_id int primary key auto_increment,emp_id int,emp_salary_month int,emp_salary_year int,transaction_date date, dept_id int , emp_basic int, emp_ma int,emp_pf int, emp_pt int,emp_gross int,emp_total_salary int)";
-  connection.query(query, (err, result) => {
-    if (err) {
-      throw err;
-    }
-    console.log(result);
-    res.status(200).send("Table created");
-  });
-});
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
